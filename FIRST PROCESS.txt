@@ -24,4 +24,325 @@ Public Class CaesarCipher
                 Result += Chr(X)
             Else
                 Result += c
+            End If End If
+
+        Next
+        Return Result
+
+    End Function
+
+    Private Sub cmdDecrypt_Click(sender As Object, e As EventArgs) Handles cmdDecrypt.Click
+        OriginalTexttxt.Text = Caesar_Cipher(PlainTexttxt.Text, NumericUpDown1.Value, False)
+        PlainTexttxt.Text = ""
+    End Sub
+
+    Private Sub cmdEncrypt_Click(sender As Object, e As EventArgs) Handles cmdEncrypt.Click
+        PlainTexttxt.Text = Caesar_Cipher(OriginalTexttxt.Text, NumericUpDown1.Value, True)
+        OriginalTexttxt.Text = ""
+
+    End Sub
+
+    Private Sub CaesarCipher_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+    Public Sub MyCalculator()
+        Dim MyCA As Double, MyExam As Double, MyTotalGrade As Double
+        Const ExamPercent As Double = 0.7, CAPercent As Double = 0.3
+        MyCA = Convert.ToDouble(CAGradetextEdit.Text)
+        MyExam = Convert.ToDouble(ExamsGradetextEdit.Text)
+        If ModulecodecomboBoxEdit1.Text = "M1120" Then
+            MyTotalGrade = (MyCA * CAPercent) + (MyExam * ExamPercent)
+            If MyTotalGrade < 40 Then
+                MyFirstGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = Sorry you have refrence in this module "
+                MyFirstGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFirstGradelabelControl.Text
+            ElseIf MyTotalGrade > 39 And MyTotalGrade <= 49 Then
+                MyFirstGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = C"
+                MyFirstGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFirstGradelabelControl.Text
+            ElseIf MyTotalGrade > 49 And MyTotalGrade <= 59 Then
+                MyFirstGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B"
+                MyFirstGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFirstGradelabelControl.Text
+            ElseIf MyTotalGrade > 59 And MyTotalGrade <= 65 Then
+                MyFirstGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B+"
+                MyFirstGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFirstGradelabelControl.Text
+            ElseIf MyTotalGrade > 65 And MyTotalGrade <= 69 Then
+                MyFirstGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A"
+                MyFirstGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFirstGradelabelControl.Text
+            ElseIf MyTotalGrade > 69 Then
+                MyFirstGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A+"
+                MyFirstGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFirstGradelabelControl.Text
+            ElseIf MyTotalGrade <= 39 Then
+                MyFirstGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = Sorry you have refrence in this module "
+                MyFirstGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFirstGradelabelControl.Text
             End If
+
+        ElseIf ModulecodecomboBoxEdit1.Text = "M1121" Then
+
+            MyTotalGrade = (MyCA * CAPercent) + (MyExam * ExamPercent)
+
+            If MyTotalGrade < 40 Then
+                MySGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = Sorry you have refrence in this module "
+                MySGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySGradelabelControl.Text
+            ElseIf MyTotalGrade > 39 And MyTotalGrade <= 49 Then
+                MySGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = C"
+                MySGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySGradelabelControl.Text
+            ElseIf MyTotalGrade > 49 And MyTotalGrade <= 59 Then
+                MySGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B"
+                MySGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySGradelabelControl.Text
+            ElseIf MyTotalGrade > 59 And MyTotalGrade <= 65 Then
+                MySGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B+"
+                MySGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 65 And MyTotalGrade <= 69 Then
+                MySGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A"
+                MySGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 69 Then
+                MySGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A+"
+                MySGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySGradelabelControl.Text
+
+            End If
+
+        ElseIf ModulecodecomboBoxEdit1.Text = "M1122" Then
+
+            MyTotalGrade = (MyCA * CAPercent) + (MyExam * ExamPercent)
+
+            If MyTotalGrade < 40 Then
+                MyTGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = Sorry you have refrence in this module "
+                MyTGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyTGradelabelControl.Text
+            ElseIf MyTotalGrade > 39 And MyTotalGrade <= 49 Then
+                MyTGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = C"
+                MyTGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyTGradelabelControl.Text
+            ElseIf MyTotalGrade > 49 And MyTotalGrade <= 59 Then
+                MyTGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B"
+                MyTGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyTGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 59 And MyTotalGrade <= 65 Then
+                MyTGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B+"
+                MyTGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyTGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 65 And MyTotalGrade <= 69 Then
+                MyTGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A"
+                MyTGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyTGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 69 Then
+                MyTGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A+"
+                MyTGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyTGradelabelControl.Text
+
+            End If
+        ElseIf ModulecodecomboBoxEdit1.Text = "M1123" Then
+
+            MyTotalGrade = (MyCA * CAPercent) + (MyExam * ExamPercent)
+            If MyTotalGrade < 40 Then
+                MyFourthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = Sorry you have refrence in this module "
+                MyFourthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFourthGradelabelControl.Text
+            ElseIf MyTotalGrade > 39 And MyTotalGrade <= 49 Then
+                MyFourthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = C"
+                MyFourthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFourthGradelabelControl.Text
+            ElseIf MyTotalGrade > 49 And MyTotalGrade <= 59 Then
+                MyFourthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B"
+                MyFourthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFourthGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 59 And MyTotalGrade <= 65 Then
+                MyFourthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B+"
+                MyFourthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFourthGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 65 And MyTotalGrade <= 69 Then
+                MyFourthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A"
+                MyFourthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFourthGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 69 Then
+                MyFourthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A+"
+                MyFourthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFourthGradelabelControl.Text
+
+
+            End If
+
+        ElseIf ModulecodecomboBoxEdit1.Text = "M1124" Then
+
+            MyTotalGrade = (MyCA * CAPercent) + (MyExam * ExamPercent)
+
+            If MyTotalGrade < 40 Then
+                MyFiftGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = Sorry you have refrence in this module "
+                MyFiftGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFiftGradelabelControl.Text
+            ElseIf MyTotalGrade > 39 And MyTotalGrade <= 49 Then
+                MyFiftGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = C"
+                MyFiftGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFiftGradelabelControl.Text
+            ElseIf MyTotalGrade > 49 And MyTotalGrade <= 59 Then
+                MyFiftGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B"
+                MyFiftGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFiftGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 59 And MyTotalGrade <= 65 Then
+                MyFiftGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B+"
+                MyFiftGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFiftGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 65 And MyTotalGrade <= 69 Then
+                MyFiftGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A"
+                MyFiftGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFiftGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 69 Then
+                MyFiftGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A+"
+                MyFiftGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MyFiftGradelabelControl.Text
+
+            End If
+
+        ElseIf ModulecodecomboBoxEdit1.Text = "M1125" Then
+
+            MyTotalGrade = (MyCA * CAPercent) + (MyExam * ExamPercent)
+
+            If MyTotalGrade < 40 Then
+                MySixthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = Sorry you have refrence in this module "
+                MySixthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySixthGradelabelControl.Text
+            ElseIf MyTotalGrade > 39 And MyTotalGrade <= 49 Then
+                MySixthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = C"
+                MySixthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySixthGradelabelControl.Text
+            ElseIf MyTotalGrade > 49 And MyTotalGrade <= 59 Then
+                MySixthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B"
+                MySixthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySixthGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 59 And MyTotalGrade <= 65 Then
+                MySixthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = B+"
+                MySixthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySixthGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 65 And MyTotalGrade <= 69 Then
+                MySixthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A"
+                MySixthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySixthGradelabelControl.Text
+
+            ElseIf MyTotalGrade > 69 Then
+                MySixthGradelabelControl.Text = "Your Grade Point for " + ModuleOffertextEdit.Text + " is " + MyTotalGrade.ToString() + "% = A+"
+                MySixthGradelabelControl.Visible = True
+                OriginalTexttxt.Text = MySixthGradelabelControl.Text
+
+            End If
+        End If
+        'double MyActualotalGrade =Convert.ToDouble(MyFirstGradelabelControl.Text + MySGradelabelControl.Text + MyTGradelabelControl.Text + MyFourthGradelabelControl.Text + MyFiftGradelabelControl.Text + MySixthGradelabelControl.Text);
+        '  double GP = MyActualotalGrade / 100 * 6;
+        '  MyResultlbl.Text = GP.ToString();
+        '  MyResultlbl.Visible = true;
+        '''/  return MyTAcualotalGrade;
+    End Sub
+    Private Sub CalculatesimpleButton2_Click(sender As Object, e As EventArgs) Handles CalculatesimpleButton2.Click
+        If StudentNametextEdit.Text = "" Then
+            errorProvider1.SetError(StudentNametextEdit, "Please Enter Student Name")
+        ElseIf ModuleOffertextEdit.Text = "" Then
+
+            errorProvider1.SetError(ModuleOffertextEdit, "Please Enter the Module you intended to calculate for")
+        ElseIf ModulecodecomboBoxEdit1.Text = "" Then
+
+            errorProvider1.SetError(ModulecodecomboBoxEdit1, "Please Enter the Module Code Continuous Assessment")
+
+        ElseIf CAGradetextEdit.Text = "" Then
+
+            errorProvider1.SetError(CAGradetextEdit, "Please Enter the Continuous Assessment(C A) grade")
+
+        ElseIf ExamsGradetextEdit.Text = "" Then
+
+            errorProvider1.SetError(ExamsGradetextEdit, "Please Enter the Exams grade")
+        Else
+
+            MyCalculator()
+        End If
+    End Sub
+
+    Private Sub StudentNametextEdit_EditValueChanged(sender As Object, e As EventArgs) Handles StudentNametextEdit.EditValueChanged
+        If StudentNametextEdit.Text <> "" Then
+            ErrorProvider1.Clear()
+            MyNamelabelControl.Text = StudentNametextEdit.Text
+            OriginalTexttxt.Text = StudentNametextEdit.Text
+            MyNamelabelControl.Visible = True
+        End If
+    End Sub
+
+    Private Sub ModuleOffertextEdit_EditValueChanged(sender As Object, e As EventArgs) Handles ModuleOffertextEdit.EditValueChanged
+        If ModuleOffertextEdit.Text <> "" Then
+            ErrorProvider1.Clear()
+        End If
+    End Sub
+
+    Private Sub ModulecodecomboBoxEdit1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ModulecodecomboBoxEdit1.SelectedIndexChanged
+        If ModulecodecomboBoxEdit1.Text <> "" Then
+            ErrorProvider1.Clear()
+        End If
+    End Sub
+
+    Private Sub CAGradetextEdit_EditValueChanged(sender As Object, e As EventArgs) Handles CAGradetextEdit.EditValueChanged
+        If CAGradetextEdit.Text <> "" Then
+            ErrorProvider1.Clear()
+        End If
+    End Sub
+
+    Private Sub ExamsGradetextEdit_EditValueChanged(sender As Object, e As EventArgs) Handles ExamsGradetextEdit.EditValueChanged
+        If ExamsGradetextEdit.Text <> "" Then
+            ErrorProvider1.Clear()
+        End If
+    End Sub
+
+    Private Sub NewsimpleButton1_Click(sender As Object, e As EventArgs) Handles NewsimpleButton1.Click
+        StudentNametextEdit.Text = StudentNametextEdit.Text
+        ModuleOffertextEdit.Text = ""
+        CAGradetextEdit.Text = ""
+        ExamsGradetextEdit.Text = ""
+        ModulecodecomboBoxEdit1.Text = ""
+    End Sub
+
+    Private Sub cmdClear_Click(sender As Object, e As EventArgs) Handles cmdClear.Click
+        MyFirstGradelabelControl.Visible = False
+        MySGradelabelControl.Visible = False
+        MyTGradelabelControl.Visible = False
+        MyFourthGradelabelControl.Visible = False
+        MyFiftGradelabelControl.Visible = False
+        MySixthGradelabelControl.Visible = False
+        MyNamelabelControl.Visible = False
+        MyResultlbl.Visible = False
+        StudentNametextEdit.Text = ""
+        OriginalTexttxt.Text = ""
+        PlainTexttxt.Text = ""
+    End Sub
+
+    Private Sub XtraTabPage3_Paint(sender As Object, e As PaintEventArgs) Handles XtraTabPage3.Paint
+        'OriginalTexttxt.Text = XtraTabPage3.Text
+
+        'OriginalTexttxt.Text = MySGradelabelControl.Text
+        'OriginalTexttxt.Text = MyTGradelabelControl.Text
+        'OriginalTexttxt.Text = MyFourthGradelabelControl.Text
+        'OriginalTexttxt.Text = MyFiftGradelabelControl.Text
+        'OriginalTexttxt.Text = MySixthGradelabelControl.Text
+        'OriginalTexttxt.Text = MyResultlbl.Text
+
+    End Sub
+End Class
