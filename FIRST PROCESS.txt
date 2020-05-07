@@ -1,0 +1,27 @@
+Public Class CaesarCipher
+    Function Caesar_Cipher(ByVal Text As String, ByVal N As Integer, ByVal Encrypt As Boolean)
+        Dim Result As String = ""
+
+        For Each c As Char In Text
+
+            Dim X As Integer
+            If Encrypt Then
+                X = Asc(c) + N
+            Else
+                X = Asc(c) + 26 - N
+            End If
+
+            If Char.IsLower(c) Then
+                If X > Asc("z") Then
+                    X -= 26
+                End If
+                Result += Chr(X)
+
+            ElseIf Char.IsUpper(c) Then
+                If X > Asc("Z") Then
+                    X -= 26
+                End If
+                Result += Chr(X)
+            Else
+                Result += c
+            End If
