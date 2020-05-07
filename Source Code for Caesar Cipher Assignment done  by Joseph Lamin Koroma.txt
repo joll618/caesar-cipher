@@ -1,0 +1,44 @@
+'I use VB with windoms form (By Joseph Lamin Koroma)
+
+Public Class CaesarCipher
+    Function Caesar_Cipher(ByVal Text As String, ByVal N As Integer, ByVal Encrypt As Boolean)
+        Dim Result As String = ""
+
+        For Each c As Char In Text
+
+            Dim X As Integer
+            If Encrypt Then
+                X = Asc(c) + N
+            Else
+                X = Asc(c) + 26 - N
+            End If 
+
+
+            If Char.IsLower(c) Then
+                If X > Asc("z") Then
+                    X -= 26
+                End If
+                Result += Chr(X)
+
+            ElseIf Char.IsUpper(c) Then
+                If X > Asc("Z") Then
+                    X -= 26
+                End If
+                Result += Chr(X)
+            Else
+                Result += c
+            End If
+
+        Next
+        Return Result
+
+    End Function
+
+    Private Sub cmdDecrypt_Click(sender As Object, e As EventArgs) Handles cmdDecrypt.Click
+        OriginalTexttxt.Text = Caesar_Cipher(PlainTexttxt.Text, NumericUpDown1.Value, False)
+    End Sub
+
+    Private Sub cmdEncrypt_Click(sender As Object, e As EventArgs) Handles cmdEncrypt.Click
+        PlainTexttxt.Text = Caesar_Cipher(OriginalTexttxt.Text, NumericUpDown1.Value, True)
+    End Sub
+End Class
